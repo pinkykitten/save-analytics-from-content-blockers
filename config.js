@@ -70,6 +70,12 @@ export default {
                     replace: ({ host }) => `"https://${ host }/s","http://${ host }/a",".adroll.com`
                 }
             ],
+            "www.facebook.com": [
+                {
+                    regex: /"https\:\/\/s","http:\/\/a","\.adroll\.com/,
+                    replace: ({ host }) => `"https://${ host }/s","http://${ host }/a",".adroll.com`
+                }
+            ],
             "eb2.3lift.com": [
                 { // Because eb2.3lift.com/xuid?mid=_&xuid=_&dongle=_ redirects to "/xuid" which doesn't exists
                     regex: /^\/xuid/,
@@ -107,7 +113,8 @@ export default {
             "/AdServer",
             "/ads/",
             "/gtm.js",
-            "openx\\."
+            "openx\\.",
+            "fbevents.js",
         ],
     }
 };
